@@ -1,23 +1,17 @@
-# Test report - Demo_lab_QIM
+# Demo_lab_QIM - Final Test Report
 
-- Step-by-step Python tests: 12/12 passed
-- Step-by-step Docker tests: 12/12 passed
-- Tar extract structure tests: 12/12 passed
-- HTML guides in lab folder and docs folder: 12/12 passed
-- `show_guide.py` helper in every lab: 12/12 passed
-- Labtainer model diagrams in HTML: 12/12 passed
-- Labtainer command tables verified: 12/12 passed
-- Standardized QIM/ST-QIM theory sections: 12/12 passed
-- No `--step` options in HTML or NOTE: 12/12 passed
-- No custom wrapper commands in HTML or tar: 12/12 passed
-- Linux standard commands verified in Docker: 12/12 passed
-- Auto terminal configuration: `TERMINALS 1` for `qimlab` in every `start.config`
-- Startup flow: `imodule` -> `labtainer -r <lab>` -> enter student ID -> press Enter -> lab terminals open
-- Canonical commands: `imodule`, `labtainer -r <lab>`, enter student ID, press Enter, auto-open `qimlab`, `checkwork`, `stoplab`
-- Student commands: `mkdir`, `pwd`, `ls`, `sha256sum`, `python3`, `tee`, `cat`, `python3 -m json.tool`, `checkwork`
-- Per-lab tar files: 12/12
-- Lab/tar names: removed `code` suffix
-- MP4 sample video: included in every lab
-- UTF-8 Vietnamese files: verified
-- Labtainer guidance: `guide.html`, `docs/<lab>.html`, `docs/read_first.txt`, `NOTE.txt`, `instructions.txt`
-- Checkwork: requires student ID and verifies step artifacts
+Updated: 2026-05-12 23:25:00
+
+## Passed Checks
+
+- 12/12 Docker full workflow tests passed.
+- 12/12 early `checkwork` tests failed correctly before required artifacts existed.
+- 12/12 labs decode the bundled MP4 through `ffmpeg/ffprobe` before algorithm checks.
+- 12/12 tar packages passed static Labtainer structure checks, including `dockerfiles/Dockerfile.<lab>.qimlab.student`, `qimlab/home_tar/home.tar`, and `qimlab/sys_tar/sys.tar`.
+- 12/12 labs include Labtainer-style `results.config` and `goals.config` identifiers.
+- Generated `work/`, `student-work/`, and `grade.txt` are excluded from every tar.
+- Obsolete command/config patterns were removed: `--step`, `moreterm.py`, custom `qim-*` wrappers, `HOST_HOME_XFER seed_dir/`, and binary MP4 `FILE_REGEX`.
+
+## Labtainer Note
+
+The local Windows workspace does not provide `imodule` or `labtainer`, so real Labtainer runtime import/startup could not be executed here. Docker execution and tar-level structure checks passed for all 12 labs.

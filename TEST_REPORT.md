@@ -9,10 +9,12 @@
 - Labtainer command tables verified: 12/12 passed
 - Standardized QIM/ST-QIM theory sections: 12/12 passed
 - No `--step` options in HTML or NOTE: 12/12 passed
-- Wrapper commands verified in Docker: 12/12 passed
+- No custom wrapper commands in HTML or tar: 12/12 passed
+- Linux standard commands verified in Docker: 12/12 passed
+- Auto terminal configuration: `TERMINALS 1` for `qimlab` in every `start.config`
 - Startup flow: `imodule` -> `labtainer -r <lab>` -> enter student ID -> press Enter -> lab terminals open
-- Canonical commands: `imodule`, `labtainer -r <lab>`, `moreterm.py <lab> qimlab`, `checkwork`, `stoplab`
-- Student commands: `qim-theory`, `qim-prepare`, `qim-embed`, `qim-extract`, `qim-report`, `checkwork`
+- Canonical commands: `imodule`, `labtainer -r <lab>`, enter student ID, press Enter, auto-open `qimlab`, `checkwork`, `stoplab`
+- Student commands: `mkdir`, `pwd`, `ls`, `sha256sum`, `python3`, `tee`, `cat`, `python3 -m json.tool`, `checkwork`
 - Per-lab tar files: 12/12
 - Lab/tar names: removed `code` suffix
 - MP4 sample video: included in every lab

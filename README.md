@@ -17,20 +17,26 @@ labtainer -r qim_scalar
 
 4. Khi Labtainer khởi tạo thành công và hỏi thông tin chấm bài, nhập mã sinh viên rồi ấn Enter để vào lab. Các cửa sổ/terminal cần thiết sẽ mở ra.
 
-5. Nếu cần mở thêm cửa sổ terminal của container:
+5. Labtainer tự mở terminal `qimlab` theo cấu hình `TERMINALS 1`; người học không cần tự mở thêm cửa sổ.
+
+6. Khi lab mở, xem `guide.html` để làm tuần tự trong terminal `qimlab` bằng lệnh Linux chuẩn:
 
 ```bash
-moreterm.py qim_scalar qimlab
-```
-
-6. Khi lab mở, xem `guide.html` để làm tuần tự trong terminal `qimlab`:
-
-```bash
-qim-theory
-qim-prepare
-qim-embed
-qim-extract
-qim-report
+mkdir -p work
+pwd
+ls -lh
+ls -lh media/sample_video.mp4
+sha256sum media/sample_video.mp4 | tee work/video_sha256.txt
+python3 run_lab.py theory | tee work/theory.log
+python3 run_lab.py prepare | tee work/prepare.log
+python3 -m json.tool work/step2_chuan_bi_tham_so_va_du_lieu_nhi_phan.json | tee work/step2_view.txt
+python3 run_lab.py embed | tee work/embed.log
+python3 -m json.tool work/step3_thuc_hien_nhung_qim_stqim.json | tee work/step3_view.txt
+python3 run_lab.py extract | tee work/extract.log
+python3 -m json.tool work/step4_tach_tin_va_do_chat_luong.json | tee work/step4_view.txt
+python3 run_lab.py report | tee work/report.log
+cat work/summary.txt
+python3 -m json.tool work/result.json | tee work/result_view.txt
 checkwork
 ```
 
@@ -40,4 +46,4 @@ checkwork
 stoplab
 ```
 
-Mỗi lab có `guide.html` được chuẩn hóa theo mẫu, mô hình Labtainer trực quan, phần lý thuyết QIM/ST-QIM chi tiết, quy trình nhập mã sinh viên trước khi vào lab, bảng câu lệnh chuẩn, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.
+Mỗi lab có `guide.html` được chuẩn hóa theo mẫu, mô hình Labtainer trực quan, phần lý thuyết QIM/ST-QIM chi tiết, quy trình nhập mã sinh viên trước khi vào lab, bảng câu lệnh Linux chuẩn, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.

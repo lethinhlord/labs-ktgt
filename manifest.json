@@ -1,87 +1,87 @@
 {
-  "updated_at": "2026-05-13 00:15:00",
+  "updated_at": "2026-05-13 00:28:13",
   "lab_count": 12,
   "labs": [
     {
       "id": "qim_scalar",
-      "tar": "01_qim_scalar.tar",
+      "tar": "qim_scalar.tar",
       "title": "01 - Thực hành giấu và tách bit bằng thuật toán QIM vô hướng",
       "kind": "scalar",
       "description": "Thực hành hai tập mức lượng tử của QIM, nhúng bit 0/1 và tách bit bằng khoảng cách tới coset gần nhất."
     },
     {
       "id": "qim_dct_block",
-      "tar": "02_qim_dct_block.tar",
+      "tar": "qim_dct_block.tar",
       "title": "02 - Thực hành giấu tin vào hệ số DCT 8x8 bằng QIM",
       "kind": "dct_block",
       "description": "Thực hành DCT/IDCT trên block 8x8, chọn hệ số AC trung gian thấp và nhúng/tách bit bằng QIM."
     },
     {
       "id": "qim_gop_iframe",
-      "tar": "03_qim_gop_iframe.tar",
+      "tar": "qim_gop_iframe.tar",
       "title": "03 - Thực hành lựa chọn khung I trong chuỗi GOP để giấu tin",
       "kind": "gop",
       "description": "Mô phỏng I/P/B frame theo mục 4.2.2 và chỉ chọn khung I để quá trình giấu/tách ít phụ thuộc dự đoán liên khung."
     },
     {
       "id": "qim_partial_decode_quant",
-      "tar": "04_qim_partial_decode_quant.tar",
+      "tar": "qim_partial_decode_quant.tar",
       "title": "04 - Thực hành giải nén một phần VLD, zigzag và lượng tử hóa ngược",
       "kind": "partial_decode",
       "description": "Mô phỏng VLD/RLE, zigzag, giải lượng tử hệ số DCT và nhúng một bit bằng QIM trên hệ số AC."
     },
     {
       "id": "qim_full_frame_dct",
-      "tar": "05_qim_full_frame_dct.tar",
+      "tar": "qim_full_frame_dct.tar",
       "title": "05 - Thực hành DCT toàn khung và QIM trên tần số trung gian thấp",
       "kind": "full_frame",
       "description": "Mô phỏng xử lý toàn frame bằng các block DCT 8x8, chọn vùng tần số trung gian thấp để cân bằng chất lượng và độ bền."
     },
     {
       "id": "stqim_projection",
-      "tar": "06_stqim_projection.tar",
+      "tar": "stqim_projection.tar",
       "title": "06 - Thực hành Spread Transform QIM trên vector hệ số DCT",
       "kind": "stqim",
       "description": "Thực hành lõi ST-QIM: sinh vector trải, tính z = u^T x, lượng tử hóa theo bit và cập nhật y = x + (Q-z)u."
     },
     {
       "id": "stqim_keyed_spreading",
-      "tar": "07_stqim_keyed_spreading.tar",
+      "tar": "stqim_keyed_spreading.tar",
       "title": "07 - Thực hành ST-QIM với vector trải sinh từ khóa bí mật",
       "kind": "keyed",
       "description": "Kiểm tra vai trò khóa bí mật: đúng khóa tách được chuỗi bit, sai khóa tạo BER cao và không được chấp nhận."
     },
     {
       "id": "qim_packet_crc",
-      "tar": "08_qim_packet_crc.tar",
+      "tar": "qim_packet_crc.tar",
       "title": "08 - Thực hành đóng gói payload với MAGIC, length và CRC khi giấu tin",
       "kind": "packet",
       "description": "Thực hành đóng gói thông điệp trước khi nhúng để tách tin hoàn chỉnh và phát hiện lỗi sau xử lý video."
     },
     {
       "id": "qim_majority_repetition",
-      "tar": "09_qim_majority_repetition.tar",
+      "tar": "qim_majority_repetition.tar",
       "title": "09 - Thực hành lặp packet và majority vote chống nhiễu, rơi frame",
       "kind": "majority",
       "description": "Mô phỏng nhiều bản sao bit/frame và dùng biểu quyết đa số để sửa lỗi bit rời rạc trong quá trình tách tin."
     },
     {
       "id": "qim_quality_capacity",
-      "tar": "10_qim_quality_capacity.tar",
+      "tar": "qim_quality_capacity.tar",
       "title": "10 - Thực hành đánh giá PSNR, SSIM, BER và dung lượng giấu tin QIM",
       "kind": "metrics",
       "description": "Thực hành đo chất lượng và phân tích đánh đổi giữa delta, độ méo, dung lượng hữu dụng và độ chính xác bit."
     },
     {
       "id": "qim_compression_attack",
-      "tar": "11_qim_compression_attack.tar",
+      "tar": "qim_compression_attack.tar",
       "title": "11 - Thực hành kiểm tra QIM sau nén lại và lượng tử hóa lại hệ số DCT",
       "kind": "compression",
       "description": "Mô phỏng tấn công nén lại: so sánh hệ số tần số thấp với hệ số tần số cao để thấy vì sao mục 4.2.2 ưu tiên vùng trung gian thấp."
     },
     {
       "id": "stqim_video_pipeline",
-      "tar": "12_stqim_video_pipeline.tar",
+      "tar": "stqim_video_pipeline.tar",
       "title": "12 - Thực hành pipeline giấu và tách tin video bằng ST-QIM",
       "kind": "end_to_end",
       "description": "Tích hợp pipeline: tách frame, DCT 8x8, ST-QIM, packet/CRC, lặp frame, majority vote và kiểm tra chất lượng sau nhiễu nhẹ."

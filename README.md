@@ -1,15 +1,21 @@
-# Demo Lab QIM/ST-QIM - Labtainer IModule Tar Files
+12 lab QIM/ST-QIM chạy tuần tự theo bước, có video MP4 mẫu, `guide.html` chuyên nghiệp, checkwork nhập mã sinh viên và tar riêng từng bài.
 
-Repository nay chi chua cac file can thiet de import 12 bai Labtainer bang imodule.
+## Cách dùng nhanh
 
-## Cach dung tung lab
+1. Tải file tar của bài cần thực hành trong thư mục `tars/`.
+2. Import vào Labtainer:
 
 ```bash
-imodule https://raw.githubusercontent.com/<USER>/<REPO>/main/tars/01_qim_scalar.tar
+imodule file:///duong/dan/01_qim_scalar.tar
+```
+
+3. Chạy lab theo đúng mã lab, ví dụ:
+
+```bash
 labtainer -r qim_scalar
 ```
 
-Trong lab, chay tuan tu:
+4. Khi lab mở, xem `guide.html` để làm tuần tự:
 
 ```bash
 python3 run_lab.py --step 1
@@ -20,4 +26,4 @@ python3 run_lab.py --step 5
 checkwork
 ```
 
-checkwork se yeu cau nhap ma sinh vien. Moi lab co video mau MP4 tai media/sample_video.mp4 va huong dan trong NOTE.txt, instructions.txt, docs/read_first.txt.
+Mỗi lab có `guide.html`, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.

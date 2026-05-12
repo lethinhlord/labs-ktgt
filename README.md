@@ -26,11 +26,11 @@ moreterm.py qim_scalar qimlab
 6. Khi lab mở, xem `guide.html` để làm tuần tự trong terminal `qimlab`:
 
 ```bash
-python3 run_lab.py --step 1
-python3 run_lab.py --step 2
-python3 run_lab.py --step 3
-python3 run_lab.py --step 4
-python3 run_lab.py --step 5
+qim-theory
+qim-prepare
+qim-embed
+qim-extract
+qim-report
 checkwork
 ```
 
@@ -40,4 +40,4 @@ checkwork
 stoplab
 ```
 
-Mỗi lab có `guide.html`, mô hình Labtainer trực quan, quy trình nhập mã sinh viên trước khi vào lab, bảng câu lệnh chuẩn, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.
+Mỗi lab có `guide.html` được chuẩn hóa theo mẫu, mô hình Labtainer trực quan, phần lý thuyết QIM/ST-QIM chi tiết, quy trình nhập mã sinh viên trước khi vào lab, bảng câu lệnh chuẩn, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.

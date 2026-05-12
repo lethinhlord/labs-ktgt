@@ -7,8 +7,12 @@
 - `show_guide.py` helper in every lab: 12/12 passed
 - Labtainer model diagrams in HTML: 12/12 passed
 - Labtainer command tables verified: 12/12 passed
+- Standardized QIM/ST-QIM theory sections: 12/12 passed
+- No `--step` options in HTML or NOTE: 12/12 passed
+- Wrapper commands verified in Docker: 12/12 passed
 - Startup flow: `imodule` -> `labtainer -r <lab>` -> enter student ID -> press Enter -> lab terminals open
 - Canonical commands: `imodule`, `labtainer -r <lab>`, `moreterm.py <lab> qimlab`, `checkwork`, `stoplab`
+- Student commands: `qim-theory`, `qim-prepare`, `qim-embed`, `qim-extract`, `qim-report`, `checkwork`
 - Per-lab tar files: 12/12
 - Lab/tar names: removed `code` suffix
 - MP4 sample video: included in every lab

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-12 16:45:00",
+  "updated_at": "2026-05-12 17:05:00",
   "step_by_step_python_tests": "12/12 passed",
   "step_by_step_docker_tests": "12/12 passed",
   "tar_extract_step_by_step_tests": "12/12 passed",
@@ -9,7 +9,8 @@
   "docker_guide_open_helper_tests": "12/12 passed",
   "labtainer_model_diagrams_in_html": "12/12 passed",
   "labtainer_command_tables_verified": "12/12 passed",
-  "canonical_labtainer_commands": "imodule, labtainer <lab> -r, moreterm.py <lab> qimlab, checkwork, stoplab",
+  "canonical_labtainer_commands": "imodule, labtainer -r <lab>, enter student id, press Enter, moreterm.py <lab> qimlab, checkwork, stoplab",
+  "student_id_startup_flow_in_html": "12/12 passed",
   "per_lab_tars": 12,
   "names_without_code_suffix": true,
   "mp4_sample_in_each_lab": 12,

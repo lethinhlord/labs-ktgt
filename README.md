@@ -12,16 +12,18 @@ imodule file:///duong/dan/01_qim_scalar.tar
 3. Chạy lab theo đúng mã lab, ví dụ:
 
 ```bash
-labtainer qim_scalar -r
+labtainer -r qim_scalar
 ```
 
-4. Nếu cần mở thêm cửa sổ terminal của container:
+4. Khi Labtainer khởi tạo thành công và hỏi thông tin chấm bài, nhập mã sinh viên rồi ấn Enter để vào lab. Các cửa sổ/terminal cần thiết sẽ mở ra.
+
+5. Nếu cần mở thêm cửa sổ terminal của container:
 
 ```bash
 moreterm.py qim_scalar qimlab
 ```
 
-5. Khi lab mở, xem `guide.html` để làm tuần tự trong terminal `qimlab`:
+6. Khi lab mở, xem `guide.html` để làm tuần tự trong terminal `qimlab`:
 
 ```bash
 python3 run_lab.py --step 1
@@ -32,10 +34,10 @@ python3 run_lab.py --step 5
 checkwork
 ```
 
-6. Dừng lab sau khi hoàn thành:
+7. Dừng lab sau khi hoàn thành:
 
 ```bash
 stoplab
 ```
 
-Mỗi lab có `guide.html`, mô hình Labtainer trực quan, bảng câu lệnh chuẩn, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.
+Mỗi lab có `guide.html`, mô hình Labtainer trực quan, quy trình nhập mã sinh viên trước khi vào lab, bảng câu lệnh chuẩn, `docs/<lab>.html`, `NOTE.txt`, video `media/sample_video.mp4`, `run_lab.py`, cấu hình Labtainer và checkwork riêng.

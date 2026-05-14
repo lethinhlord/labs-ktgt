@@ -8,6 +8,7 @@
   "formula_rendering": "PASS: MathML formula bodies used in all guide.html and docs HTML files",
   "real_math_symbols": "PASS: ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? found in every generated guide formula section",
   "old_formula_entities": "PASS: no old entity-based formula text or manual fraction markup remains in generated formula sections",
+  "student_facing_checkwork_privacy": "PASS: 84/84 guide files and 36/36 packaged home guide files do not expose result files, grading config paths, internal identifiers, or Y markers",
   "docker_base_image": "PASS: lethinhlord/labtainer.base2:latest manifest exists",
   "python_compile": "PASS: all generated lab Python scripts compile",
   "formula_review": [

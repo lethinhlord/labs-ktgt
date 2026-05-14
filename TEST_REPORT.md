@@ -18,6 +18,7 @@ Updated: 2026-05-14
 - 12/12 `results.config` files keep Labtainer result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, and `combine_video`.
 - 12/12 generated tars keep the required GitHub `imodule` URL format: `https://github.com/lethinhlord/labs-ktgt/<lab>.tar`.
 - 12/12 generated Python lab scripts compile successfully with `py_compile`.
+- 84/84 student-facing guide files and 36/36 guide files inside packaged `home.tar` archives were checked to ensure they do not expose result files, grading config paths, internal result identifiers, or `Y - ...` checkwork markers.
 
 ## Math Review
 

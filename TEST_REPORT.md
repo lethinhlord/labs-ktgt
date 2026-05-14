@@ -7,11 +7,12 @@ Updated: 2026-05-14
 - 12/12 lab directories were regenerated successfully from `regenerate_labs_utf8.py`.
 - 12/12 tar packages exist as individual importable files in `Demo_lab_QIM/tars`.
 - 12/12 tar packages contain the standard Labtainer files: `config/start.config`, `instr_config/results.config`, `instr_config/goals.config`, `dockerfiles/Dockerfile.<lab>.qimlab.student`, `qimlab/home_tar/home.tar`, and `qimlab/sys_tar/sys.tar`.
-- 12/12 `home.tar` files contain `guide.html`, `NOTE.txt`, `run_lab.py`, algorithm entrypoints, and the sample MP4.
+- 12/12 `home.tar` files contain `guide.html`, `NOTE.txt`, `run_lab.py`, algorithm entrypoints, the sample MP4, and three cropped textbook illustration images.
 - 12/12 `guide.html` files no longer contain the removed model section, model CSS class, Labtainer host/container diagram text, or footer.
 - 12/12 `guide.html` files start with the new “Lý thuyết thuật toán cần biết” section covering DCT, quantization, QIM, ST-QIM, payload reliability, BER, PSNR, and SSIM.
-- 12/12 `guide.html` files use stable offline TeX-like formula blocks for DCT, QIM cosets, ST-QIM projection, BER, PSNR, and SSIM.
-- 12/12 `guide.html` files no longer reference external or embedded theory images, preventing broken image rendering in Labtainer.
+- 12/12 `guide.html` files use clearer numbered formula blocks for DCT, quantization, QIM cosets, QIM extraction, dither QIM, ST-QIM projection, ST-QIM extraction, BER, PSNR, and SSIM.
+- 12/12 `guide.html` files include local cropped textbook images for the embedding process, QIM/dither illustration, and extraction process.
+- 12/12 `guide.html` files no longer include the paragraph beginning with “Nguồn học thuật chính...”.
 - 12/12 `guide.html` files no longer include the blue note block beginning with “Khi làm bài, ưu tiên đối chiếu...”.
 - 12/12 `results.config` files continue to use Labtainer result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, and `combine_video`.
 - 12/12 `goals.config` files remain empty like the reference `lab-demo/video-stego-dct`.

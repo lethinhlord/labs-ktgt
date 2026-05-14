@@ -1,28 +1,30 @@
-# Demo_lab_QIM - Final Test Report
+# Demo_lab_QIM - Test Report
 
 Updated: 2026-05-14
 
 ## Passed Checks
 
-- 12/12 lab directories were regenerated successfully from `regenerate_labs_utf8.py`.
+- 12/12 lab directories regenerated successfully from `regenerate_labs_utf8.py`.
 - 12/12 tar packages exist as individual importable files in `Demo_lab_QIM/tars`.
-- 12/12 tar packages contain the standard Labtainer files: `config/start.config`, `instr_config/results.config`, `instr_config/goals.config`, `dockerfiles/Dockerfile.<lab>.qimlab.student`, `qimlab/home_tar/home.tar`, and `qimlab/sys_tar/sys.tar`.
-- 12/12 `home.tar` files contain `guide.html`, `NOTE.txt`, `run_lab.py`, algorithm entrypoints, the sample MP4, and three cropped textbook illustration images.
-- 12/12 `guide.html` files no longer contain the removed model section, model CSS class, Labtainer host/container diagram text, or footer.
-- 12/12 `guide.html` files start with the new “Lý thuyết thuật toán cần biết” section covering DCT, quantization, QIM, ST-QIM, payload reliability, BER, PSNR, and SSIM.
-- 12/12 `guide.html` files use styled math-card formula blocks with fractions, superscripts/subscripts, sigma notation, and short notes for DCT, quantization, QIM, ST-QIM, BER, PSNR, and SSIM.
-- 12/12 `guide.html` files embed three cropped textbook figures as base64 data images, so the figures render even when the HTML is opened outside the lab folder.
-- 12/12 `guide.html` files have no remaining relative `media/...` image references and no old `<pre class="formula">` blocks.
-- 12/12 `guide.html` files no longer include the paragraph beginning with “Nguồn học thuật chính...”.
-- 12/12 `guide.html` files no longer include the blue note block beginning with “Khi làm bài, ưu tiên đối chiếu...”.
-- 12/12 `results.config` files continue to use Labtainer result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, and `combine_video`.
-- 12/12 `goals.config` files remain empty like the reference `lab-demo/video-stego-dct`.
-- 12/12 Python scripts in the generated lab home folders compile successfully with `py_compile`.
-- 12/12 labs keep `REGISTRY b22dcat295`, `CONTAINER qimlab`, `USER ubuntu`, `TERMINALS 1`, and `X11 YES` in `start.config`.
-- 12/12 lab guides keep the requested commands: `imodule https://github.com/lethinhlord/labs-ktgt/<lab>.tar` and `labtainer -r <lab>`.
+- 12/12 generated `config/start.config` files use `REGISTRY lethinhlord`.
+- 12/12 tar packages also contain `REGISTRY lethinhlord` inside `<lab>/config/start.config`.
+- 0/12 generated labs and 0/12 tar packages contain the old `REGISTRY b22dcat295`.
+- Docker Hub contains `lethinhlord/labtainer.base2:latest`, mirrored from the public Labtainer base image required by `FROM $registry/labtainer.base2`.
+- 12/12 guides contain 9 math-card formula blocks: DCT 2D, matrix DCT/IDCT, DCT quantization, scalar QIM, blind QIM extraction, dither modulation, ST-QIM embedding, ST-QIM extraction, and PSNR/BER/SSIM quality metrics.
+- Formula blocks use HTML entities such as `&Delta;`, `&Sigma;`, `&pi;`, `&alpha;`, `&lambda;`, `&mu;`, and `&sigma;` to avoid mojibake in Labtainer/browser environments.
+- 12/12 formula sections were checked for common corrupted tokens (`Î`, `â`, `Ï`, `Â`, malformed hat notation); no errors were found.
+- 12/12 guides still embed three cropped textbook figures as base64 data images.
+- 12/12 `results.config` files keep Labtainer result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, and `combine_video`.
+- 12/12 generated tars keep the required GitHub `imodule` URL format: `https://github.com/lethinhlord/labs-ktgt/<lab>.tar`.
+- 12/12 generated Python lab scripts compile successfully with `py_compile`.
 
-## Runtime Notes
+## Math Review
 
-- Host Windows smoke execution could not run `extract_frames_audio.py` because `ffmpeg` is not installed in the local Windows PATH.
-- Docker smoke execution could not be run in this environment because Docker Desktop daemon was not active: Docker CLI is installed, but the Linux engine pipe was unavailable.
-- The generated Dockerfiles still install `ffmpeg` inside the lab image, so this blocker is local-environment specific rather than a missing packaged dependency.
+- DCT 2D: verified with the standard 8x8 orthonormal JPEG-style DCT form using `C(0)=1/sqrt(2)` and factor `1/4`.
+- Matrix DCT/IDCT: verified as `C = T X T^T` and `X = T^T C T` for an orthonormal transform matrix.
+- Quantization: verified as coefficient quantization `Cq = round(C/Q)` and reconstruction `Chat = Cq*Q`.
+- Scalar QIM: rewritten in the standard dither/coset form `Q_Delta(x,d_b)=Delta*round((x-d_b)/Delta)+d_b`, with `d_0=0` and `d_1=Delta/2`.
+- QIM extraction: verified as blind nearest-coset decision using the received coefficient `r`.
+- ST-QIM: verified as projection `z=u^T x`, quantization of `z`, and vector update `y=x+lambda(z'-z)u` with unit-norm keyed spreading vector `u`.
+- ST-QIM extraction: verified as nearest-coset decision after projecting the received vector with the same key-derived `u`.
+- Quality metrics: verified PSNR, BER, and SSIM formulas; MSE is written over `H*W*C` for image/video frames.

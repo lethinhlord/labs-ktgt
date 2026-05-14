@@ -1,28 +1,20 @@
 {
   "updated": "2026-05-14",
   "lab_count": 12,
-  "passed_checks": {
-    "regenerated": "12/12",
-    "tar_packages": "12/12",
-    "labtainer_structure": "12/12",
-    "home_tar_required_files": "12/12",
-    "model_section_removed": "12/12",
-    "theory_section_added": "12/12",
-    "formula_markers_present": "12/12",
-    "embedded_textbook_images_present": "12/12",
-    "relative_image_paths_removed": "12/12",
-    "styled_math_cards_present": "12/12",
-    "source_paragraph_removed": "12/12",
-    "blue_note_block_removed": "12/12",
-    "results_config_identifiers": "12/12",
-    "goals_config_empty": "12/12",
-    "python_compile": "12/12",
-    "registry_b22dcat295": "12/12",
-    "guide_commands": "12/12"
-  },
-  "runtime_notes": [
-    "Host Windows smoke execution could not run extract_frames_audio.py because ffmpeg is not installed in the local Windows PATH.",
-    "Docker smoke execution could not be run because Docker Desktop daemon was not active.",
-    "The lab Dockerfiles install ffmpeg inside the image, so the runtime blocker is local-environment specific."
-  ]
+  "tar_count": 12,
+  "registry_lethinhlord": "12/12 generated labs and 12/12 tar packages",
+  "old_registry_b22dcat295": "0/12",
+  "formula_cards": "9/guide, 12/12 guides",
+  "formula_encoding_check": "PASS: no mojibake tokens in math-card sections",
+  "formula_review": [
+    "DCT 2D standard 8x8 form with C(0)=1/sqrt(2) and factor 1/4",
+    "Matrix DCT/IDCT C=T X T^T and X=T^T C T",
+    "DCT quantization Cq=round(C/Q), Chat=Cq*Q",
+    "Scalar QIM dither/coset form Q_Delta(x,d_b)=Delta round((x-d_b)/Delta)+d_b",
+    "Blind QIM extraction by nearest coset",
+    "ST-QIM projection z=u^T x, y=x+lambda(z'-z)u with unit-norm u",
+    "PSNR, BER, SSIM formulas verified"
+  ],
+  "docker_base_image": "PASS: lethinhlord/labtainer.base2:latest manifest exists",
+  "python_compile": "PASS: all generated lab Python scripts compile"
 }

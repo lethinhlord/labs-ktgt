@@ -10,8 +10,9 @@ Updated: 2026-05-14
 - 12/12 `home.tar` files contain `guide.html`, `NOTE.txt`, `run_lab.py`, algorithm entrypoints, the sample MP4, and three cropped textbook illustration images.
 - 12/12 `guide.html` files no longer contain the removed model section, model CSS class, Labtainer host/container diagram text, or footer.
 - 12/12 `guide.html` files start with the new “Lý thuyết thuật toán cần biết” section covering DCT, quantization, QIM, ST-QIM, payload reliability, BER, PSNR, and SSIM.
-- 12/12 `guide.html` files use clearer numbered formula blocks for DCT, quantization, QIM cosets, QIM extraction, dither QIM, ST-QIM projection, ST-QIM extraction, BER, PSNR, and SSIM.
-- 12/12 `guide.html` files include local cropped textbook images for the embedding process, QIM/dither illustration, and extraction process.
+- 12/12 `guide.html` files use styled math-card formula blocks with fractions, superscripts/subscripts, sigma notation, and short notes for DCT, quantization, QIM, ST-QIM, BER, PSNR, and SSIM.
+- 12/12 `guide.html` files embed three cropped textbook figures as base64 data images, so the figures render even when the HTML is opened outside the lab folder.
+- 12/12 `guide.html` files have no remaining relative `media/...` image references and no old `<pre class="formula">` blocks.
 - 12/12 `guide.html` files no longer include the paragraph beginning with “Nguồn học thuật chính...”.
 - 12/12 `guide.html` files no longer include the blue note block beginning with “Khi làm bài, ưu tiên đối chiếu...”.
 - 12/12 `results.config` files continue to use Labtainer result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, and `combine_video`.

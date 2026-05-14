@@ -1,31 +1,25 @@
 # Demo_lab_QIM - Final Test Report
 
-Updated: 2026-05-14 18:00:00
+Updated: 2026-05-14
 
 ## Passed Checks
 
-- 12/12 Docker full workflow tests passed.
-- 12/12 early `checkwork` tests failed correctly before required artifacts existed.
-- 12/12 labs decode the bundled MP4 through `ffmpeg/ffprobe` before algorithm checks.
-- 12/12 tar packages passed static Labtainer structure checks against `lab-demo/video-stego-dct`.
-- 12/12 labs include `config/<lab>-home_tar.list`, `instr_config/pregrade.sh`, `dockerfiles/Dockerfile.<lab>.qimlab.student`, `qimlab/home_tar/home.tar`, `qimlab/sys_tar/sys.tar`, `qimlab/input.mp4`, `qimlab/message.txt`, and visible algorithm scripts.
-- 12/12 tar packages exclude root-only Docker/test files and the expanded `qimlab/home` tree, matching the cleaner `video-stego-dct` package shape.
-- 12/12 labs use the standard Labtainer `checkwork` mechanism: no custom container `checkwork` is packaged, and grading reads `instr_config/results.config`.
-- 12/12 `results.config` files check real command output files: `extract_frames_audio.py.stdout`, `frame_steganography_qim.py.stdout`, `combine_stego_frames_audio.py.stdout`, plus the real video SHA-256.
-- 12/12 algorithm entrypoint scripts are included both at container level and in `home_tar`.
-- 12/12 `start.config` files align with the reference pattern: `REGISTRY b22dcat295`, `CONTAINER qimlab`, `USER ubuntu`, `TERMINALS 1`, `X11 YES`.
-- 12/12 `guide.html` and `NOTE.txt` files use the requested import command pattern: `imodule https://github.com/lethinhlord/labs-ktgt/<lab>.tar`.
-- 12/12 `guide.html` and `NOTE.txt` files use the requested run command pattern: `labtainer -r <lab>`.
-- 12/12 `guide.html` files were compacted against the `video-stego-dct` reference style: purpose, theory, Labtainer model, startup commands, sequential tasks, checkwork, and stoplab only.
-- 12/12 `guide.html` files have no footer class or `Demo_lab_QIM` footer text.
-- 12/12 `guide.html` and `NOTE.txt` files use `stoplab <lab>` with the exact lab name.
-- 12/12 tar files are named exactly by lab id, for example `qim_scalar.tar`, `qim_dct_block.tar`, and `stqim_video_pipeline.tar`.
-- 12/12 labs use the required MP4: `9c993a10-a70b-4046-8673-7ed9508140b3 (online-video-cutter.com).mp4`.
-- Required MP4 SHA-256: `ca13501e8af0bd70bcc0325f2a8c0a23df503b7f45faec7609f96f918d9ee51f`.
-- 12/12 labs use Labtainer-style result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, `combine_video`; `goals.config` is empty like `video-stego-dct`.
-- Generated `work/`, `student-work/`, and `grade.txt` are excluded from every tar.
-- Obsolete command/config patterns were removed: `--step`, `moreterm.py`, custom `qim-*` wrappers, `HOST_HOME_XFER seed_dir/`, and binary MP4 `FILE_REGEX`.
+- 12/12 lab directories were regenerated successfully from `regenerate_labs_utf8.py`.
+- 12/12 tar packages exist as individual importable files in `Demo_lab_QIM/tars`.
+- 12/12 tar packages contain the standard Labtainer files: `config/start.config`, `instr_config/results.config`, `instr_config/goals.config`, `dockerfiles/Dockerfile.<lab>.qimlab.student`, `qimlab/home_tar/home.tar`, and `qimlab/sys_tar/sys.tar`.
+- 12/12 `home.tar` files contain `guide.html`, `NOTE.txt`, `run_lab.py`, algorithm entrypoints, the sample MP4, and the two offline theory images.
+- 12/12 `guide.html` files no longer contain the removed model section, model CSS class, Labtainer host/container diagram text, or footer.
+- 12/12 `guide.html` files start with the new “Lý thuyết thuật toán cần biết” section covering DCT, quantization, QIM, ST-QIM, payload reliability, BER, PSNR, and SSIM.
+- 12/12 `guide.html` files include formula markers for DCT, QIM cosets, ST-QIM projection, BER, PSNR, and SSIM.
+- 12/12 `guide.html` files include embedded offline images rendered from the textbook/report: `media/theory_qim_textbook.jpg` and `media/theory_stqim_report.jpg`.
+- 12/12 `results.config` files continue to use Labtainer result identifiers: `video_hash`, `extract_frames`, `extract_audio`, `prepare_payload`, `embed_message`, `extract_message`, `quality_metrics`, and `combine_video`.
+- 12/12 `goals.config` files remain empty like the reference `lab-demo/video-stego-dct`.
+- 12/12 Python scripts in the generated lab home folders compile successfully with `py_compile`.
+- 12/12 labs keep `REGISTRY b22dcat295`, `CONTAINER qimlab`, `USER ubuntu`, `TERMINALS 1`, and `X11 YES` in `start.config`.
+- 12/12 lab guides keep the requested commands: `imodule https://github.com/lethinhlord/labs-ktgt/<lab>.tar` and `labtainer -r <lab>`.
 
-## Labtainer Note
+## Runtime Notes
 
-The local Windows workspace does not provide `imodule` or `labtainer`, so real Labtainer runtime import/startup could not be executed here. Docker execution and tar-level structure checks passed for all 12 labs.
+- Host Windows smoke execution could not run `extract_frames_audio.py` because `ffmpeg` is not installed in the local Windows PATH.
+- Docker smoke execution could not be run in this environment because Docker Desktop daemon was not active: Docker CLI is installed, but the Linux engine pipe was unavailable.
+- The generated Dockerfiles still install `ffmpeg` inside the lab image, so this blocker is local-environment specific rather than a missing packaged dependency.
